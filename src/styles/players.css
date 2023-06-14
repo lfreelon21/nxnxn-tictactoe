@@ -1,0 +1,18 @@
+.player-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.player{
+    padding: 10px;
+    background: #9ced8c;
+}
+.score{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
