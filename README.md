@@ -13,27 +13,27 @@ To run the Tic-Tac-Toe game locally on your machine, follow these steps:
 
 ## Clone the repository:
 
-'''bash
+```bash
 git clone https://github.com/your-username/nxnxn-tictactoe.git
-'''
+```
 
 ## Navigate to the project directory:
 
-'''bash
+```bash
 cd nxnxn-tictactoe
-'''
+```
 
 ## Install the dependencies:
 
-'''bash
+```bash
 npm install
-'''
+```
 
 ## Start the development server:
 
-'''bash
+```bash
 npm run dev
-'''
+```
 
 Open your web browser and visit http://localhost:3000 to play the game.
 
