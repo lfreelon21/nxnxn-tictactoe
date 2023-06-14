@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NxNxN Tic-Tac-Toe Game - Next.js
+This repository contains an implementation of a Tic-Tac-Toe game in Next.js, with support for different board sizes (NxNxN). The game allows players to compete against each other and supports all the standard rules of Tic-Tac-Toe.
 
-## Getting Started
+Features
+NxN game board with adjustable size.
+    -Soon: NxNxN support.
+Two-player mode: players take turns marking cells.
+Automatic detection of win, loss, or draw.
+Interactive user interface with real-time updates.
+Getting Started
+To run the Tic-Tac-Toe game locally on your machine, follow these steps:
 
-First, run the development server:
+Clone the repository:
 
-```bash
+'''bash
+git clone https://github.com/your-username/nxnxn-tictactoe.git
+'''
+
+Navigate to the project directory:
+'''bash
+cd nxnxn-tictactoe
+'''
+
+Install the dependencies:
+'''bash
+npm install
+'''
+
+Start the development server:
+'''bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+'''
+Open your web browser and visit http://localhost:3000 to play the game.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+License
+This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code in any way you like.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Acknowledgments
+The implementation of this Tic-Tac-Toe game was inspired by the classic game rules and the Next.js framework.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Contact
+If you have any questions or need further assistance, feel free to contact the project maintainer at leibra0120@gmail.com.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy playing NxNxN Tic-Tac-Toe!
