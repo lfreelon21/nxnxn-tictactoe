@@ -1,5 +1,6 @@
 import { useStore } from '@/stateManagement/store';
 import Image from 'next/image'
+import '@/styles/cell.css'
 
 const CellCount = () => {
 
