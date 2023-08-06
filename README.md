@@ -3,9 +3,9 @@
 This repository contains an implementation of a Tic-Tac-Toe game in Next.js, with support for different board sizes (NxNxN). The game allows players to compete against each other and supports all the standard rules of Tic-Tac-Toe.
 
 ## Features
-NxN game board with adjustable size.
+NxNxN game board with adjustable size.
 
-    -(Soon): NxNxN support
+    -In Progress: third dimension game logic
     
 Two-player mode: players take turns marking cells.
 
