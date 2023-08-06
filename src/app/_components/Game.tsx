@@ -1,12 +1,11 @@
 'use client'
 
 import GridContainer from "./GridContainer";
-import '@/styles/grid.css'
-import Reset from './Reset';
+import '@/app/_styles/grid.css'
+import Buttons from './Buttons';
 import Player from "./Player";
 import CellCount from "./CellCount";
-import ThirdDimension from "./ThirdDimension";
-import { useStore } from '@/stateManagement/store';
+import { useStore } from '@/app/_stateManagement/store';
 
 const Game = () => {
 
@@ -15,11 +14,10 @@ const Game = () => {
             <div className="game-container">
                 <Player number={1} char='x'/>
                 <GridContainer/>
-                <Player number={2} char='c'/>
+                <Player number={2} char='o'/>
             </div>
             <CellCount/>
-            <Reset/>
-            <ThirdDimension/>
+            <Buttons/>
         </div>
      );
 }

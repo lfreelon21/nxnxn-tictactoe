@@ -1,6 +1,6 @@
 import '@/styles/cell.css'
 import { motion } from 'framer-motion'
-import { StartPos } from '@/types/types'
+import { StartPos } from '@/app/_types/types'
 
 const CellHover = ({hover, startPos}: {hover: boolean, startPos: StartPos}) => {
 

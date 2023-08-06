@@ -1,12 +1,13 @@
-import { useStore } from '@/stateManagement/store';
+import { useStore } from '@/app/_stateManagement/store';
 import Image from 'next/image'
-import '@/styles/cell.css'
+import '@/app/_styles/buttons.css'
 
 const CellCount = () => {
 
     const cellCount = useStore(state => state.gridCellCount)
     const setCellCount = useStore(state => state.setGridCellCount)
     const setGridState = useStore(state => state.setGridState)
+    const thirdDimension = useStore(state => state.thirdDimension)
 
     const Sign = ({sign}: {sign: string}) => {
         return (
@@ -26,16 +27,16 @@ const CellCount = () => {
                 priority={true}
                 onClick={() => {
                     if(sign === 'plus') {
-                        setCellCount(Math.pow(Math.sqrt(cellCount) + 1, 2))
                         setGridState(() => {
-                            const newState = Array(Math.pow(Math.sqrt(cellCount) + 1, 2)).fill('')
+                            const dim = Math.pow(cellCount, 1/3) 
+                            const newState = Array(dim + 1).fill('').map(() => Array(dim).fill('').map(() => Array(dim).fill('')))
                             return newState
                         })
                     }
                     else if(sign === 'minus') {
-                        setCellCount(Math.pow(Math.sqrt(cellCount) - 1, 2))
                         setGridState(() => {
-                            const newState = Array(Math.pow(Math.sqrt(cellCount) - 1, 2)).fill('')
+                            const dim = Math.pow(cellCount, 1/3)
+                            const newState = Array(dim - 1).fill('').map(() => Array(dim).fill('').map(() => Array(dim).fill('')))
                             return newState
                         })
                     }
@@ -46,7 +47,7 @@ const CellCount = () => {
 
     return ( 
         <div className="cell-count-container">
-            <div className="cell-count">CellCount: {cellCount}</div>
+            <div className="cell-count">CellCount: {thirdDimension ? cellCount : Math.ceil(Math.pow(cellCount, 2/3))}</div>
             <div className="cell-count-signs">
                 <Sign sign="plus"/>
                 <Sign sign="minus"/>

@@ -1,18 +1,20 @@
 'use client'
-import '@/styles/cell.css'
+import '@/app/_styles/cell.css'
 import Image from 'next/image'
-import { useStore } from '@/stateManagement/store'
-import CellHover from '@/components/CellHover'
+import { useStore } from '@/app/_stateManagement/store'
+import CellHover from '@/app/_components/CellHover'
 import { MouseEvent, forwardRef } from 'react'
-import { StartPos, Style } from '@/types/types'
+import { StartPos, Style } from '@/app/_types/types'
 
 interface CellProps {
-    index: number
+    i: number,
+    j: number,
+    k: number
 }
 
 const Cell = forwardRef<HTMLDivElement | null, CellProps>((props, ref) => {
 
-    const {index} = props
+    const {i, j, k} = props
     const win = useStore(state => state.win)
     const gridState = useStore(state => state.gridState)
     const setGridState = useStore(state => state.setGridState)
@@ -20,32 +22,32 @@ const Cell = forwardRef<HTMLDivElement | null, CellProps>((props, ref) => {
     const gridSize = useStore(state => state.gridSize)
     const zTranslate = useStore(state => state.cellZTranslate)
 
-    const handleGridStateChange = (index: number, currChar: string) => {
+    const handleGridStateChange = (row: number, col: number, dim: number, currChar: string) => {
         setGridState(() => {
-            const newState = [...gridState]
-            newState[index] = currChar
-            return newState
+            const newState = gridState.map((row) => row.map((col) => [...col]));
+            newState[row][col][dim] = currChar;
+            return newState;
         })
     }
 
     const handleClick = () => {
-        if(gridState[index] === '' && !win) {
-            handleGridStateChange(index, 'x')
+        if(gridState[i][j][k] === '' && !win) {
+            handleGridStateChange(i, j, k, 'x')
             
         }
-        else if(gridState[index] === 'x' && !win) {
-            handleGridStateChange(index, 'c')
+        else if(gridState[i][j][k] === 'x' && !win) {
+            handleGridStateChange(i, j, k, 'o')
         }
-        else if(gridState[index] === 'c' && !win) {
-            handleGridStateChange(index, '')
+        else if(gridState[i][j][k] === 'c' && !win) {
+            handleGridStateChange(i, j, k, '')
         }
     }
 
     const renderImage = () => {
-        if(gridState[index] !== '') {
+        if(gridState[i][j][k] !== '') {
             return (
                 <Image 
-                    src={`/${gridState[index]}.png`}
+                    src={`/${gridState[i][j][k]}.png`}
                     alt="X"
                     width="100"
                     height="100"

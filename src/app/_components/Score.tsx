@@ -1,4 +1,4 @@
-import '@/styles/players.css';
+import '@/app/_styles/players.css';
 
 const Score = ({score}: {score: number}) => {
 
